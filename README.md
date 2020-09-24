@@ -2,6 +2,16 @@
 
 [Install docker](https://docs.docker.com/get-docker/).
 
+# Clone
+
+Clone this repository and update the submodules:
+
+```
+git clone git@github.com:TamaMcGlinn/png_editor.git
+cd png_editor
+git submodule update --init --recursive
+```
+
 # Build
 
 `make` will build the docker image.
