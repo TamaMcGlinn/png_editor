@@ -1,0 +1,6 @@
+# Gitignore everything but this file
+*
+!.gitignore
+
+# And one example for easier demonstration
+!/example.png
