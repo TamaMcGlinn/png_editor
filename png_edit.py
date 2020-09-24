@@ -15,5 +15,5 @@ parser.add_argument('output_image', type=str, help='the output image')
 args = parser.parse_args()
 
 PWD = os.getcwd()
-subprocess.run(['docker', 'run', '--rm', '-v', f'{PWD}/work_dir:/opt/application/work_dir', 'png_edit', '../test-libpng', args.input_image, args.output_image])
+subprocess.run(['docker', 'run', '--rm', '-v', f'{PWD}:/opt/application/work_dir', 'png_edit', '../test-libpng', args.input_image, args.output_image])
 

@@ -18,9 +18,17 @@ git submodule update --init --recursive
 
 # Use
 
-Put the images you wish to transform into work_dir; this directory is mounted in docker so the application can access it. There is one example png already in the repository, so you can try it out with:
+There is one example png already in the repository, so you can try it out with:
 
-`./png_edit.py example.png example_out.png`
+```
+cd work_dir
+../png_edit.py example.png example_out.png`
+```
 
 This outputs some stuff about pixel values and generates a cyanized example_out.png for your viewing pleasure.
 
+If you add the directory of png_edit.py to your PATH, you can run it from anywhere. Note that you cannot pass in images above the current directory; this is because your working directory is mounted in docker for read/write access prior to running the C++ program:
+
+```
+png_edit.py ../something.png ../something_out.png   <-- you can't do this
+```
